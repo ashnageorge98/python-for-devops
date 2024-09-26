@@ -1,5 +1,5 @@
-# This module contains functions for deploying an application and checking its status..
-# deployment.py
+This module contains functions for deploying an application and checking its status..
+deployment.py
 
 def deploy_application(app_name):
     """Simulate application deployment."""
