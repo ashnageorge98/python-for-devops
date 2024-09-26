@@ -1,0 +1,69 @@
+# Here’s a simple Python script that covers basic data types, used in the context of a DevOps project. It simulates fetching server status information and notifying via Slack:
+# Basic DevOps Script: Check Server Status and Notify
+
+# Importing required libraries (for API requests and Slack notifications)
+import requests
+
+# String: API endpoint for server status
+server_url = "http://example.com/api/status"
+
+# Integer: Maximum retries for checking server status
+max_retries = 3
+
+# Boolean: Flag to indicate if the server is healthy
+is_healthy = False
+
+# List: Store different server statuses for review
+server_status_history = []
+
+# Function to simulate server status check (returns a dictionary)
+def check_server_status():
+    # Dictionary: Sample API response data
+    response = {
+        "status": "healthy",
+        "uptime": 99.95,
+        "response_time_ms": 120
+    }
+    return response
+
+# Loop to check server status and update list
+for retry in range(max_retries):
+    status_data = check_server_status()
+    server_status_history.append(status_data)  # Appending dict to list
+
+    if status_data["status"] == "healthy":
+        is_healthy = True
+        print(f"Server is healthy on attempt {retry + 1}")
+        break
+    else:
+        print(f"Attempt {retry + 1}: Server not healthy")
+
+# Tuple: Storing final report
+final_report = (is_healthy, server_status_history)
+
+# Function to simulate Slack notification
+def send_slack_notification(is_healthy):
+    if is_healthy:
+        message = "Server is healthy! ✅"
+    else:
+        message = "Server is down! ❌"
+
+    # Example payload (not real API call)
+    slack_payload = {
+        "channel": "#alerts",
+        "text": message
+    }
+    # This is a placeholder for a real Slack API call
+    print(f"Sending Slack message: {message}")
+
+# Sending notification
+send_slack_notification(final_report[0])
+
+Concepts Covered:
+Strings: Used for server_url and Slack message.
+Integers: Used for max_retries.
+Booleans: Used to check if the server is healthy.
+Lists: Used to store server status history.
+Dictionaries: To simulate API responses.
+Tuples: Used to store the final report with multiple data points.
+This is a simple, understandable example related to DevOps where checking server health and sending notifications are common tasks.
