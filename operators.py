@@ -1,4 +1,4 @@
-The code calculates the total cost of cloud resources based on their usage and applies discounts where applicable
+This simple script calculates the costs associated with VM and storage usage, applies a discount, and checks if the final cost stays within budget. 
 Operators in devops scenario:
 # Python code demonstrating operators in a DevOps project scenario
 
