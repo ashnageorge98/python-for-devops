@@ -38,7 +38,7 @@ def check_service_health(url):
     pull_latest_image(SERVICE_NAME, IMAGE_VERSION)
 
 #Deploy the service
-if deploy_service(SERVIVE_NAME):
+if deploy_service(SERVICE_NAME):
   print("Deployment successfull")
 
 # Verify health status
