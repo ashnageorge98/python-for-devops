@@ -1,3 +1,4 @@
+# This module contains functions for deploying an application and checking its status..
 # deployment.py
 
 def deploy_application(app_name):
@@ -12,4 +13,29 @@ def check_status(app_name):
     # Here you would add the code to check the app status.
     return f"{app_name} is running."
 
+main.py: This is the main script that uses the deployment module.
+# main.py
+
+# Importing the functions from deployment module
+from deployment import deploy_application, check_status
+
+def main():
+    app_name = "MyWebApp"  # Name of the application to deploy
+
+    # Deploy the application
+    deployment_message = deploy_application(app_name)
+    print(deployment_message)
+
+    # Check the status of the application
+    status_message = check_status(app_name)
+    print(status_message)
+
+if __name__ == "__main__":
+    main()
+
+#__init__.py: This file can be empty, but it indicates that the directory should be treated as a package.
+
+Functions: deploy_application and check_status are defined to encapsulate the logic for deployment and status checking.
+Modules: The deployment.py module contains functions that are imported into main.py.
+Packages: The presence of __init__.py signifies that devops_project is a package, which could potentially contain more modules in the future.
 
