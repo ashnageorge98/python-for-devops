@@ -52,7 +52,10 @@ Explanation:
 
 How to Run the Script
 1. Set the Environment Variable:
-- In your terminal, set the environment variable for the cloud service. For example, in Windows:
+- In your terminal, set the environment variable for the cloud service. For example, 
+in Linux:
+- export CLOUD_SERVICE=AWS
+in Windows:
 - set CLOUD_SERVICE=AWS
 
 Execute the script from the terminal with command line arguments:
